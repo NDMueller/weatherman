@@ -47,7 +47,7 @@ export function reset() {
 
 export function setWeather( location ) {
   var url = buildURL( location );
-  const promise = axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${location}&appId=06ccdcc5f56aa95aa46a018eda003e1b&units=imperial`).then( response => formatWeatherData( response.data ) );
+  const promise = axios.get(url).then( response => formatWeatherData( response.data ) );
   return {
     type: SET_WEATHER,
     payload: promise
